@@ -10,18 +10,60 @@
 
 
     <title>MovieFlix</title>
+
+    <!-- Styles -->
+    @vite('resources/js/app.js')
 </head>
 
 <body>
-    <header>
-        <h1>
-            ciao
-        </h1>
+    <header class="d-flex">
+        <div class="logo">
+            <img src="https://www.macitynet.it/wp-content/uploads/2016/06/netflix-logo-930x930.png" alt="MovieFlix Logo">
+        </div>
+
+        <div class="title text-danger fw-bold">
+            <h1>
+                MovieFlix
+            </h1>
+        </div>
     </header>
-    <main>
-        @foreach ($movies as $movie)
-            <p>{{$movie}}</p>
-        @endforeach
+  
+    <main class="py-5">
+        <div class="container-lg">
+            <div class="row">
+                @foreach ($movies as $movie)
+                    <div class="col-3">
+                        <div class="card mb-4" style="width: 18rem;">
+                            <img src="{{ $movie->image }}" class="card-img-top" alt="{{ $movie->title }}">
+                            <div class="card-body">
+                                <h5 class="card-title text-center fw-bold">{{ $movie->title }}</h5>
+
+                                <p class="card-text mb-0">
+                                    <span class="fw-bold">Titolo Originale: </span>
+                                    <span>{{ $movie->original_title }}</span>
+                                </p>
+
+                                <p class="card-text mb-0">
+                                    <span class="fw-bold">Nazionalità: </span>
+                                    <span>{{ $movie->nationality }}</span>
+                                </p>
+
+                                <p class="card-text mb-0">
+                                    <span class="fw-bold">Data di uscita: </span>
+                                    <span>{{ $movie->date }}</span>
+                                </p>
+
+                                
+                                <p class="card-text mb-0">
+                                    <span class="fw-bold">Voto: </span>
+                                    <span>{{ $movie->vote }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach    
+            </div>
+        </div>
     </main>
 </body>
 </html>
