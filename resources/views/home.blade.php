@@ -34,7 +34,7 @@
                 @foreach ($movies as $movie)
                     <div class="col-3">
                         <div class="card mb-4" style="width: 18rem;">
-                            <img src="{{ $movie->image }}" class="card-img-top" alt="{{ $movie->title }}">
+                            <img src="{{ $movie->image }}" class="my-card card-img-top" alt="{{ $movie->title }}">
                             <div class="card-body">
                                 <h5 class="card-title text-center fw-bold">{{ $movie->title }}</h5>
 
